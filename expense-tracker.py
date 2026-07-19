@@ -1,3 +1,18 @@
+expenses = []
+def add_expense():
+    amount = input("Enter amount: ")
+    category = input("Enter category: ")
+    description = input("Enter description: ")
+
+    expense = {
+    "amount": amount,
+    "category": category,
+    "description": description
+    }
+
+    expenses.append(expense)
+    print("Expense added successfully!\n")
+
 def display_menu():
     print("===== Expense Tracker =====")
     print("1. Add Expense")
@@ -13,7 +28,7 @@ while running:
     choice = input("Choose an option: ")
 
     if choice == "1":
-        print("Add Expense - Coming Soon!\n")
+        add_expense()
 
     elif choice == "2":
         print("View Expenses - Coming Soon!\n")
