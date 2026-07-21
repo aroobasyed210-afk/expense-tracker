@@ -57,6 +57,21 @@ def view_total():
     
     print(f"Total Expenses: {total}\n")
 
+def search_by_category():
+    category = input("Enter category to search: ")
+
+    found = False
+    for expense in expenses:
+        if expense["category"].lower() == category.lower():
+            print(f"Category: {expense['category']}")
+            print(f"Description: {expense['description']}")
+            print(f"Amount: {expense['amount']}")
+            print("--------------------")
+
+            found = True
+    if not found:
+        print("No expenses found for this category.\n")
+
 def display_menu():
     print("===== Expense Tracker =====")
     print("1. Add Expense")
@@ -81,7 +96,7 @@ while running:
         view_total()
 
     elif choice == "4":
-        print("Search Category - Coming Soon!\n")
+        search_by_category()
 
     elif choice == "5":
         print("Goodbye!\n")
