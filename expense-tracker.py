@@ -32,6 +32,17 @@ def load_expenses():
 
 load_expenses()
 
+def view_expenses():
+    if not expenses:
+        print("No expenses found.\n")
+        return
+    for expense in expenses:
+        print("===== Expenses List =====")
+        print(f"Category: {expense['category']}")
+        print(f"Description: {expense['description']}")
+        print(f"Amount: {expense['amount']}")
+        print("--------------------")
+  
 def display_menu():
     print("===== Expense Tracker =====")
     print("1. Add Expense")
@@ -50,7 +61,7 @@ while running:
         add_expense()
 
     elif choice == "2":
-        print("View Expenses - Coming Soon!\n")
+        view_expenses()
 
     elif choice == "3":
         print("View Total - Coming Soon!\n")
